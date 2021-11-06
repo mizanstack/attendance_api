@@ -28,6 +28,8 @@ Route::group(['prefix' => '', 'middleware' => ['jwt.verify']], function () {
 	Route::apiResource('users', '\App\Http\Controllers\Api\UserAPIController');
 	Route::post('/reset-attend', '\App\Http\Controllers\Api\AttendAPIController@reset');
 	Route::post('/save-attend', '\App\Http\Controllers\Api\AttendAPIController@store');
+	Route::get('/sync-today-data/{user_id}/{year}/{month}/{day}', '\App\Http\Controllers\Api\AttendAPIController@sync_today_data');
+
 	Route::get('/get-attend/{user_id}/{year}/{month}', '\App\Http\Controllers\Api\AttendAPIController@get');
 	Route::post('/update-attend/{user_id}/{year}/{month}/{day}', '\App\Http\Controllers\Api\AttendAPIController@update');
 

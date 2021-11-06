@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
 
         \DB::table('users')->insert([
             ['role' => 1, 'name' => 'Mizanur Rahman', 'first_name' => 'Mizanur', 'last_name' => 'Rahman', 'email' => 'mizan.stack@gmail.com', 'password' => bcrypt(1234), 'entry_date' => '2022-10-28', 'leave_date' => null, 'created_at' => '2022-10-28 19:18:44', 'updated_at' => '2022-10-28 19:18:44', 'status' => 1],
+            ['role' => 2, 'name' => 'Member One', 'first_name' => 'Member', 'last_name' => 'One', 'email' => 'member@member.com', 'password' => bcrypt(1234), 'entry_date' => '2022-10-28', 'leave_date' => null, 'created_at' => '2022-10-28 19:18:44', 'updated_at' => '2022-10-28 19:18:44', 'status' => 1],
         ]);
     }
 

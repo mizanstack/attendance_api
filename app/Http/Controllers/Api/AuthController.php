@@ -31,7 +31,6 @@ class AuthController extends Controller
 	        'password' => 'required',
 	    ]);
 
-
 	    $credentials = request(['email', 'password']);
 
 	    if (!$token = auth('api')->attempt($credentials)) {

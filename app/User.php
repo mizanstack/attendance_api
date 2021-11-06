@@ -5,7 +5,7 @@ namespace App;
 use App\Traits\ImageTrait;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Builder;
-use Spatie\Permission\Traits\HasRoles;
+// use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
     use ImageTrait {
         deleteImage as traitDeleteImage;
     }
-    use HasRoles;
+    // use HasRoles;
 
     public $table = 'users';
     const IMAGE_PATH = 'users';

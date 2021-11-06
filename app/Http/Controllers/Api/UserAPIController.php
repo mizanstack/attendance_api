@@ -107,9 +107,7 @@ class UserAPIController extends AppBaseController
             if (empty($user)) {
                 return $this->sendError('User not found');
             }
-            \App\User::childrenDelete($user->id);
-            \App\Models\Media::childrenDelete($user->id);
-
+            \App\Models\Attend::where('user_id', $id)->delete();
             $user->delete();
 
             DB::commit();

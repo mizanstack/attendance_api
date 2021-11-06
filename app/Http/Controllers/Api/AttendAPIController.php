@@ -32,8 +32,21 @@ class AttendAPIController extends AppBaseController
         $query->where('user_id', $user_id)->where('year', $year)->where('month', $month);
         $result = $query->get();
         return AttendResource::collection($result);
-        return $this->sendResponse($result->toArray(), 'Attend retrieved by month successfully');
+        // return $this->sendResponse($result->toArray(), 'Attend retrieved by month successfully');
 
+    }
+
+    public function sync_today_data($user_id, $year, $month, $day, Request $request)
+    {
+        $attend = Attend::where(
+        [
+           'user_id'   => $user_id,
+           'year'   => $year,
+           'month'   => $month,
+           'day'   => $day,
+        ])->first();
+        return $attend;
+        return new AttendResource($attend);
     }
 
 
